@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas de Estudio - JavaScript</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="contenedor-principal">
+
+        <!-- Título principal -->
+        <h1 class="titulo-principal">Tarjetas Flash</h1>
+
+        <!-- Barra de progreso superior -->
+        <section class="seccion-progreso">
+            <div class="pista-progreso">
+                <div id="barraProgreso" class="relleno-progreso" style="width: 25%;"></div>
+            </div>
+            <div class="datos-progreso">
+                <span id="porcentajeProgreso">25%</span>
+                <span id="textoContador">5 de 20</span>
+            </div>
+        </section>
+
+        <!-- Tarjeta de estudio -->
+        <div class="tarjeta-contenedor">
+            <div id="tarjetaFlash" class="tarjeta">
+
+                <!-- Contenido dinámico (Pregunta / Respuesta) -->
+                <div class="cuerpo-tarjeta">
+                    <span id="etiquetaNivel" class="insignia insignia-basico">Básico</span>
+                    <p id="textoContenido" class="texto-enunciado">¿Qué es la diferencia entre var, let, y const?</p>
+                </div>
+
+                <!-- Barra de navegación inferior dentro de la tarjeta -->
+                <div class="pie-tarjeta">
+                    <button id="botonAnterior" class="boton-navegacion">&lt; Anterior</button>
+                    <button id="botonVoltear" class="boton-accion">Mostrar Respuesta</button>
+                    <button id="botonSiguiente" class="boton-navegacion">Siguiente &gt;</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Controles adicionales (Tema y Añadir) -->
+        <footer class="pie-pagina-global">
+            <button id="botonNuevo" class="boton-secundario">+ Añadir Tarjeta</button>
+            <button id="botonTema" class="boton-icono" aria-label="Cambiar tema">🌙</button>
+        </footer>
+
+    </main>
+
+    <!-- Modal para añadir nuevas tarjetas -->
+    <div id="modalFormulario" class="capa-modal oculto">
+        <div class="ventana-modal">
+            <header class="cabecera-modal">
+                <h3>Nueva Tarjeta Flash</h3>
+                <button id="botonCerrarModal" class="boton-cerrar">&times;</button>
+            </header>
+            <form id="formularioTarjeta" class="cuerpo-modal">
+                <div class="grupo-campo">
+                    <label for="campoPregunta">Pregunta:</label>
+                    <input type="text" id="campoPregunta" required placeholder="Ej: ¿Qué es una función flecha?">
+                </div>
+                <div class="grupo-campo">
+                    <label for="campoRespuesta">Respuesta:</label>
+                    <textarea id="campoRespuesta" rows="3" required placeholder="Escribe la respuesta detallada..."></textarea>
+                </div>
+                <div class="grupo-campo">
+                    <label for="campoNivel">Nivel:</label>
+                    <select id="campoNivel">
+                        <option value="basico">Básico</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                    </select>
+                </div>
+                <div class="acciones-modal">
+                    <button type="button" id="botonCancelarModal" class="boton-secundario">Cancelar</button>
+                    <button type="submit" class="boton-primario">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="aplicacion.js"></script>
+</body>
+
+</html>

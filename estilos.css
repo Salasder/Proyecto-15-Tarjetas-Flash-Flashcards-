@@ -1,0 +1,324 @@
+:root {
+    --color-fondo: #ffffff;
+    --color-tarjeta-fondo: #fcfcfc;
+    --color-borde: #d1d5db;
+    --color-texto: #111827;
+    --color-texto-secundario: #4b5563;
+    --color-primario: #111827;
+    --color-hover: #f3f4f6;
+    --radio-borde: 12px;
+}
+
+[data-tema="oscuro"] {
+    --color-fondo: #0f172a;
+    --color-tarjeta-fondo: #1e293b;
+    --color-borde: #334155;
+    --color-texto: #f8fafc;
+    --color-texto-secundario: #94a3b8;
+    --color-primario: #38bdf8;
+    --color-hover: #334155;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo-principal {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+/* Barra de progreso */
+
+.seccion-progreso {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pista-progreso {
+    width: 100%;
+    height: 12px;
+    background-color: var(--color-hover);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--color-borde);
+}
+
+.relleno-progreso {
+    height: 100%;
+    background-color: var(--color-texto);
+    transition: width 0.3s ease;
+}
+
+[data-tema="oscuro"] .relleno-progreso {
+    background-color: #38bdf8;
+}
+
+.datos-progreso {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-texto-secundario);
+}
+
+
+/* Tarjeta principal estilo wireframe */
+
+.tarjeta-contenedor {
+    width: 100%;
+}
+
+.tarjeta {
+    background-color: var(--color-tarjeta-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.cuerpo-tarjeta {
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+    gap: 16px;
+    position: relative;
+}
+
+.texto-enunciado {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* Insignias de nivel */
+
+.insignia {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.insignia-basico {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.insignia-intermedio {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.insignia-avanzado {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* Pie de tarjeta con controles integrados */
+
+.pie-tarjeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-borde);
+    padding: 12px 16px;
+    background-color: rgba(0, 0, 0, 0.01);
+    border-bottom-left-radius: var(--radio-borde);
+    border-bottom-right-radius: var(--radio-borde);
+}
+
+.boton-navegacion {
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-texto-secundario);
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.boton-navegacion:hover {
+    background-color: var(--color-hover);
+    color: var(--color-texto);
+}
+
+.boton-accion {
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.boton-accion:hover {
+    background-color: var(--color-hover);
+}
+
+
+/* Pie de página global */
+
+.pie-pagina-global {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boton-secundario {
+    background: none;
+    border: 1px solid var(--color-borde);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--color-texto);
+    transition: background 0.2s;
+}
+
+.boton-secundario:hover {
+    background-color: var(--color-hover);
+}
+
+.boton-icono {
+    background: none;
+    border: 1px solid var(--color-borde);
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Modal */
+
+.capa-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.ventana-modal {
+    background-color: var(--color-tarjeta-fondo);
+    border: 1px solid var(--color-borde);
+    width: 90%;
+    max-width: 440px;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cabecera-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boton-cerrar {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-texto);
+}
+
+.cuerpo-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.875rem;
+}
+
+.grupo-campo input,
+.grupo-campo textarea,
+.grupo-campo select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--color-borde);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: inherit;
+}
+
+.acciones-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.boton-primario {
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.oculto {
+    display: none !important;
+}
